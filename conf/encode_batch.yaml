@@ -1,0 +1,7 @@
+defaults:
+  - generator: pigan
+  - encoder: e4e
+  - misc: encode_batch_misc
+  - hparams: default # change when Hydra 1.1 releases
+  - override hydra/job_logging: custom
+  - override hydra/output: custom

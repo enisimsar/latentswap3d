@@ -1,0 +1,3 @@
+# @package _global_
+hparams:
+  batch_size: 32

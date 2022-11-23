@@ -1,0 +1,9 @@
+click==8.0.4
+gdown==4.5.4
+hydra-core==1.2.0
+scikit-learn==1.0.2
+scipy==1.8.0
+torch-ema @ git+https://github.com/fadel/pytorch_ema@3950a7b5c4b88f46fd14f620277bad21898597a9
+trimesh==3.10.5
+kornia==0.6.2
+wget

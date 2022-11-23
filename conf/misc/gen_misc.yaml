@@ -1,0 +1,6 @@
+# @package _global_
+auto_cpu_if_no_gpu: true
+device: cuda:0
+
+num_samples: 10000
+save: true

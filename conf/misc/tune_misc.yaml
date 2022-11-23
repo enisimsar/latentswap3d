@@ -1,0 +1,10 @@
+# @package _global_
+load_path: ???
+
+n_images: 32
+num_samples: 8 
+identity_threshold: 0.25
+topks: [4, 16, 32, 64, 128, 256, 512]
+
+auto_cpu_if_no_gpu: true
+device: cuda:0

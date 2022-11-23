@@ -1,0 +1,8 @@
+# @package _global_
+data_path: ???
+
+auto_cpu_if_no_gpu: true
+device: cuda:0
+
+num_epochs: 25
+save: true

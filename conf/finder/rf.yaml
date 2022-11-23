@@ -1,0 +1,2 @@
+_target_: src.finders.RFFinder
+is_shap: false

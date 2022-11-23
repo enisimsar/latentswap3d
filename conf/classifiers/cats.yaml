@@ -1,0 +1,3 @@
+_target_: src.classifiers.CatsClassifiers
+device: cuda:0
+classifiers_path: ../metrics/

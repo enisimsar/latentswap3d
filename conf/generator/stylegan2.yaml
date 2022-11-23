@@ -1,0 +1,4 @@
+_target_: src.generators.StyleGAN2Generator
+device: cuda:0
+class_name: ffhq
+is_inversion: false

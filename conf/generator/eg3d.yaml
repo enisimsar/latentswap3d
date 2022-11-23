@@ -1,0 +1,4 @@
+_target_: src.generators.EG3DGenerator
+device: cuda:0
+class_name: ffhq
+is_inversion: false

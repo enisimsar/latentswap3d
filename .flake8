@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 88
+ignore = E731, E203, W605
+exclude=src/generators/pi-GAN

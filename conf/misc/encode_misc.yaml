@@ -1,0 +1,13 @@
+# @package _global_
+image_path: ???
+
+auto_cpu_if_no_gpu: true
+device: cuda:0
+
+num_iter: 3000
+save: true
+tune_camera: true
+
+init_camera:
+  h_mean: 0
+  v_mean: 0

@@ -1,0 +1,12 @@
+# @package _global_
+load_path: ???
+latent_codes_path: null
+
+auto_cpu_if_no_gpu: true
+device: cuda:0
+
+num_samples: 3
+extract_shape: false
+n_images: 32
+topk: 256
+seed: null

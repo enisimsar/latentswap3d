@@ -1,0 +1,4 @@
+_target_: src.generators.MVCGANGenerator
+device: cuda:0
+class_name: CelebAHQ
+is_inversion: false

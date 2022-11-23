@@ -1,0 +1,28 @@
+
+[submodule "src/encoders/encoder4editing"]
+	path = src/encoders/encoder4editing
+	url = https://github.com/omertov/encoder4editing
+[submodule "src/generators/mvcgan"]
+	path = src/generators/mvcgan
+	url = https://github.com/Xuanmeng-Zhang/MVCGAN.git
+[submodule "src/generators/eg3d"]
+	path = src/generators/eg3d
+	url = https://github.com/NVlabs/eg3d.git
+[submodule "src/generators/stylenerf"]
+	path = src/generators/stylenerf
+	url = https://github.com/facebookresearch/StyleNeRF.git
+[submodule "src/generators/volumegan"]
+	path = src/generators/volumegan
+	url = https://github.com/genforce/volumegan.git
+[submodule "src/generators/stylegan2"]
+	path = src/generators/stylegan2
+	url = https://github.com/NVlabs/stylegan2
+[submodule "src/generators/giraffe"]
+	path = src/generators/giraffe
+	url = https://github.com/autonomousvision/giraffe.git
+[submodule "src/generators/pi-GAN"]
+	path = src/generators/pi-GAN
+	url = https://github.com/marcoamonteiro/pi-GAN.git
+[submodule "src/classifiers/stylegan2"]
+	path = src/classifiers/stylegan2
+	url = https://github.com/NVlabs/stylegan2

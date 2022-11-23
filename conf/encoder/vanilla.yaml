@@ -1,0 +1,13 @@
+_target_: src.encoders.VanillaEncoder
+device: cuda:0
+class_name: CelebA
+opts:
+  image_size: 512
+  lpips_type: alex
+  lpips_lambda: 0.7
+  id_lambda: 0.3
+  moco_lambda: 0.0
+  l2_lambda: 0.7
+  lr: 1e-2
+  lr_step: 100
+  

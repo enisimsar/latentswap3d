@@ -1,0 +1,4 @@
+_target_: src.generators.GiraffeGenerator
+device: cuda:0
+class_name: ffhq
+object_type: both
