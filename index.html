@@ -25,9 +25,6 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -36,9 +33,16 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+  <script defer src="./static/js/index.js"></script>
 </head>
 <body>
 
@@ -68,6 +72,25 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2212.01381"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2212.01381"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/enisimsar/latentswap3d"
@@ -80,6 +103,63 @@
               </span>
             </div>
 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small is-max-desktop">
+    <div class="hero-body">
+    <div class="container is-clipped">
+      <div id="slider">
+
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-covered">
+              <img
+                src="./static/images/mvcgan_edit.gif"
+                  alt=""
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="item__title">
+              MVCGAN Smiling Attribute Editing
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-covered">
+              <img
+                src="./static/images/eg3d_edit.gif"
+                  alt=""
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="item__title">
+              EG3D Wearing Eyeglasses Attribute Editing
+            </div>
+          </div>
+        </div> 
+
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-covered">
+              <img
+                src="./static/images/pigan_edit.gif"
+                  alt=""
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="item__title">
+              pi-GAN Smiling Attribute Editing
+            </div>
           </div>
         </div>
       </div>
@@ -101,6 +181,168 @@
       </div>
     </div>
     <!--/ Abstract. -->
+
+    <!-- Paper teaser. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <!-- <h2 class="title is-3">Teaser</h2> -->
+          <div>
+            <figure>
+              <img src="static/images/teaser.png" alt="Italian Trulli">
+              <figcaption>Figure 1: Given an image we invert it in the latent space of a pre-trained MVCGAN on FFHQ enabling novel view synthesis. Then we use our LatentSwap3D to perform attribute editing. Row two and three show a comparison on this task between LatentSwap3D and StyleFlow.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Paper teaser. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!--/ LatentSwap3D Framework -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">LatentSwap3D Framework</h2>
+          <p>
+            We aim to build a model agnostic method that can work on <i>any 3D-aware image generator</i>. Our method, LatentSwap3D, consists of two main components. The first one identifies important features in the latent space of a 3D GAN that controls the desired attribute through a random forest algorithm. Then, the target attribute is manipulated in an identity-preserving manner through a feature-swapping approach.
+          </p>
+          <p>
+            <figure>
+              <img src="static/images/framework.png" alt="Framework">
+              <figcaption>Figure 2: (a) We propose to train a random forest regressor taking latent codes \( s_i \) to predict the presence/absence of a desired attribute. We use the trained forest to rank the importance of dimensions of  \( s_i \) with respect to the desired attribute. (b) Given the latent code \( s \) of an image, first, we find the closest latent code in the support set exhibiting the desired attribute (<i>e.g.,</i> \( s^+ \) to increase <i>blondness</i>), then we swap the top  \( K \) dimensions related to the attribute to generate an edited latent code \( \hat{s} \) that can be decoded in an edited image.</figcaption>
+            </figure>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ LatentSwap3D Framework -->
+
+    <!--/ LatentSwap3D on Other 3D-aware Generators -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">LatentSwap3D on Other 3D-aware Generators</h2>
+          <div class="columns is-centered">
+            <!-- GIRAFFE. -->
+            <div class="column is-full-width">
+              <div class="content">
+                <h3 class="title is-4">GIRAFFE</h3>
+                <p>
+                  GIRAFFE consists of NeRF and 2D GANs. The NeRF part outputs the features of the 3D shape and texture, 
+                  while the 2D GAN part outputs the final image. Figure 3 shows smiling and wearing eyeglasses edits 
+                  from LatentSwap3D on the GIRAFFE - FFHQ model following the same protocol detailed for the other FFHQ trained generators. 
+                </p>
+                <p>
+                  <figure>
+                    <img src="static/images/GIRAFFE_ffhq.png" alt="GIRAFFE Result">
+                    <figcaption>Figure 3: LatentSwap3D on GIRAFFE - FFHQ.</figcaption>
+                  </figure>
+                </p>
+                <p>
+                  To test how well LatentSwap3D generalizes to different datasets we extended
+                  the experiment to include CompCars using the pre-trained GIRAFFE generator. 
+                  Due to the lack of classifiers for car attributes, as a proof of concept, 
+                  we trained a ResNet-50 to classify the color of a car from scratch on <i>Myauto.ge Cars Dataset</i>. 
+                  As seen from Fig. 4, using these classifiers our approach can edit the color of the cars successfully.
+                </p>
+                <p>
+                  <figure>
+                    <img src="static/images/GIRAFFE_cars.png" alt="GIRAFFE Result">
+                    <figcaption>Figure 4: LatentSwap3D on GIRAFFE - CompCars.</figcaption>
+                  </figure>
+                </p>
+              </div>
+            </div>
+            <!--/ GIRAFFE. -->
+          </div>
+
+          <div class="columns is-centered">
+
+            <!-- StyleNeRF. -->
+            <div class="column">
+              <div class="content">
+                <h3 class="title is-4">StyleNeRF</h3>
+                <p>
+                  StyleNeRF is another high-resolution 3D-aware generative model that integrates a NeRF into a 2D style-based generator. StyleNeRF is able to generate high-resolution and 3D consistent images/shapes from unstructured 2D images. Figure 5 shows our attribute editing, <i>e.g.,</i> smiling, removing bangs, and changing the hair color to blond, on StyleNeRF - FFHQ.
+                </p>
+                <p>
+                  <figure>
+                    <img src="static/images/StyleNeRF_ffhq.png" alt="StyleNeRF Result">
+                    <figcaption>Figure 5: LatentSwap3D on StyleNeRF - FFHQ.</figcaption>
+                  </figure>
+                </p>
+              </div>
+            </div>
+            <!--/ StyleNeRF. -->
+      
+            <!-- VolumeGAN. -->
+            <div class="column">
+              <h3 class="title is-4">VolumeGAN</h3>
+              <div class="columns is-centered">
+                <div class="column content">
+                  <p>
+                    VolumeGAN is a high-quality 3D-aware generative model explicitly trained to learn a structural and a textural representation and it is based on NeRF. The results of our approach on VolumeGAN - FFHQ are provided in Fig. 6. Our approach applies the desired attributes, <i>e.g.,</i> removing eyeglasses, changing the hair color, and reducing the facial hair, to the latent space of VolumeGAN, without changing the identity of the input face.
+                  </p>
+                  <p>
+                    <figure>
+                      <img src="static/images/VolumeGAN_ffhq.png" alt="VolumeGAN Result">
+                      <figcaption>Figure 6: LatentSwap3D on VolumeGAN - FFHQ.</figcaption>
+                    </figure>
+                  </p>
+                </div>
+      
+              </div>
+            </div>
+
+          <!--/ VolumeGAN. -->
+      </div>
+    </div>
+  </div>
+    <!--/ LatentSwap3D on Other 3D-aware Generators -->
+
+    <!--/ LatentSwap3D on StyleGAN2 -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content">
+          <h2 class="title is-3">LatentSwap3D on StyleGAN2</h2>
+          <p>
+            LatentSwap3D is not limited to 3D-aware GANs but also works on image-based GANs like StyleGAN2, 
+            see Fig. 7. First, by applying the same procedure in Fig. 2(a), 
+            we identify the latent codes from the style space of StyleGAN2 that are most important for 
+            the desired attribute. Then, we swap these latent codes to generate the desired edits, 
+            as explained in Fig. 2(b). 
+          </p>
+          <p>
+            <figure>
+              <img src="static/images/stylegan2.png" alt="StyleGAN2">
+              <figcaption>Figure 7: LatentSwap3D on StyleGAN2 - FFHQ, MetFaces, AFHQ Cats and AFHQ Dogs.</figcaption>
+            </figure>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+    <!--/ LatentSwap3D on StyleGAN2 -->
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{simsar2022latentswap3d,
+      doi = {10.48550/ARXIV.2212.01381},
+      url = {https://arxiv.org/abs/2212.01381},
+      author = {Simsar, Enis and Tonioni, Alessio and Örnek, Evin Pınar and Tombari, Federico},
+      keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+      title = {LatentSwap3D: Semantic Edits on 3D Image GANs},
+      publisher = {arXiv},
+      year = {2022},
+      copyright = {Creative Commons Attribution 4.0 International}
+    }</code></pre>
   </div>
 </section>
 
