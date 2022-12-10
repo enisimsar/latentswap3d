@@ -18,7 +18,7 @@ $ conda activate latent-3d
 
 ### Quickstart
 
-For a quick demo, see [DEMO](demo/mvcgan).
+For a quick demo, see [DEMO](demo/MVCGAN).
 
 - FFHQ Random Face Example: [Edit In Colab](http://colab.research.google.com/github/enisimsar/latentswap3d/blob/main/demo/MVCGAN/FFHQ_sample.ipynb)
 - FFHQ Real Face Example: [Edit Real Face In Colab](http://colab.research.google.com/github/enisimsar/latentswap3d/blob/main/demo/MVCGAN/FFHQ_inversion.ipynb)
