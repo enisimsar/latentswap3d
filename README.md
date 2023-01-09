@@ -10,6 +10,8 @@
 
 ### Installation
 
+`$ git clone --recurse-submodules -j8 git@github.com:enisimsar/latentswap3d.git`
+
 Install the dependencies in ``env.yml``
 ``` bash
 $ conda env create -f env.yml
