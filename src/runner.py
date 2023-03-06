@@ -176,7 +176,6 @@ def encode(cfg: DictConfig) -> None:
         device=device,
         save_path=save_path,
         image_path=cfg.image_path,
-        batch_size=cfg.hparams.batch_size,
         tune_camera=cfg.tune_camera,
         init_camera={
             "h_mean": cfg.init_camera.h_mean,

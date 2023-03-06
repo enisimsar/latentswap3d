@@ -56,7 +56,8 @@ class VanillaEncoder(Encoder):
         self.transforms = transforms.Compose(
             [
                 # transforms.Resize(320),
-                transforms.Resize(304),
+                # transforms.Resize(304),
+                transforms.Resize(256),
                 transforms.CenterCrop(256),
                 transforms.Resize(
                     (self.opts.image_size, self.opts.image_size), interpolation=0
