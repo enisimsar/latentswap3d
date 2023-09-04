@@ -54,21 +54,32 @@
           <h1 class="title is-1 publication-title">LatentSwap3D: Semantic Edits on 3D Image GANs</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://enis.dev">Enis Simsar</a><sup>1</sup>,</span>
+              <a href="https://enis.dev">Enis Simsar</a><sup>*,1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://alessiotonioni.github.io/">Alessio Tonioni</a><sup>2</sup>,</span>
+              <a href="https://alessiotonioni.github.io/">Alessio Tonioni</a><sup>3</sup>,</span>
             <span class="author-block">
-              <a href="https://evinpinar.github.io/">Evin Pınar Örnek</a><sup>1</sup>,
+              <a href="https://evinpinar.github.io/">Evin Pınar Örnek</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://federicotombari.github.io/">Federico Tombari</a><sup>1,2</sup>
+              <a href="https://federicotombari.github.io/">Federico Tombari</a><sup>2,3</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Technical University of Munich,</span>
-            <span class="author-block"><sup>2</sup>Google Switzerland</span>
+            <span class="author-block"><sup>1</sup>ETH Zürich - Data Analytics Lab,</span>
+            <span class="author-block"><sup>2</sup>Technical University of Munich,</span>
+            <span class="author-block"><sup>3</sup>Google Switzerland</span>
           </div>
+
+          <div class="is-size-7 publication-authors">
+            <span class="author-block"><sup>*</sup>Conducted this research as part of studies at Technical University of Munich.</span>
+          </div>
+
+          <br>
+          <div>
+            <h1 class="title">ICCV AI3DCC 2023</h1>
+          </div>
+          <br>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -193,7 +204,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent 3D-aware GANs rely on volumetric rendering techniques to disentangle the pose and appearance of objects, de facto generating entire 3D volumes rather than single-view 2D images from a latent code. Complex image editing tasks can be performed in standard 2D-based GANs (e.g., StyleGAN models) as manipulation of latent dimensions. However, to the best of our knowledge, similar properties have only been partially explored for 3D-aware GAN models. This work aims to fill this gap by showing the limitations of existing methods and proposing LatentSwap3D, a model-agnostic approach designed to enable attribute editing in the latent space of pre-trained 3D-aware GANs. We first identify the most relevant dimensions in the latent space of the model controlling the targeted attribute by relying on the feature importance ranking of a random forest classifier. Then, to apply the transformation, we swap the top-K most relevant latent dimensions of the image being edited with an image exhibiting the desired attribute. Despite its simplicity, LatentSwap3D provides remarkable semantic edits in a disentangled manner and outperforms alternative approaches both qualitatively and quantitatively. We demonstrate our semantic edit approach on various 3D-aware generative models such as pi-GAN, GIRAFFE, StyleSDF, MVCGAN, EG3D and VolumeGAN, and on diverse datasets, such as FFHQ, AFHQ, Cats, MetFaces, and CompCars.
+            3D GANs have the ability to generate latent codes for entire 3D volumes rather than only 2D images. These models offer desirable features like high-quality geometry and multi-view consistency, but, unlike their 2D counterparts, complex semantic image editing tasks for 3D GANs have only been partially explored. To address this problem, we propose LatentSwap3D, a semantic edit approach based on latent space discovery that can be used with any off-the-shelf 3D or 2D GAN model and on any dataset. LatentSwap3D relies on identifying the latent code dimensions corresponding to specific attributes by feature ranking using a random forest classifier. It then performs the edit by swapping the selected dimensions of the image being edited with the ones from an automatically selected reference image. Compared to other latent space control-based edit methods, which were mainly designed for 2D GANs, our method on 3D GANs provides remarkably consistent semantic edits in a disentangled manner and outperforms others both qualitatively and quantitatively. We show results on seven 3D GANs (pi-GAN, GIRAFFE, StyleSDF, MVCGAN, EG3D, StyleNeRF, and VolumeGAN) and on five datasets (FFHQ, AFHQ, Cats, MetFaces, and CompCars).
           </p>
         </div>
       </div>
@@ -364,6 +375,13 @@
   </div>
 </section>
 
+<section class="section" id="ack">
+  <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgments</h2>
+      <p>We are grateful to Google University Relationship GCP Credit Program for the support of
+        this work by providing computational resources.</p>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
