@@ -56,14 +56,12 @@ python manipulate.py load_path=$OUTPUT_PATH generator=mvcgan generator.class_nam
 
 If you use this code for your research, please cite our paper:
 ```
-@misc{simsar2022latentswap3d,
-  doi = {10.48550/ARXIV.2212.01381},
-  url = {https://arxiv.org/abs/2212.01381},
-  author = {Simsar, Enis and Tonioni, Alessio and Örnek, Evin Pınar and Tombari, Federico},
-  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {LatentSwap3D: Semantic Edits on 3D Image GANs},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {Creative Commons Attribution 4.0 International}
+@InProceedings{Simsar_2023_ICCV,
+    author    = {Simsar, Enis and Tonioni, Alessio and Ornek, Evin Pinar and Tombari, Federico},
+    title     = {LatentSwap3D: Semantic Edits on 3D Image GANs},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
+    month     = {October},
+    year      = {2023},
+    pages     = {2899-2909}
 }
 ```
